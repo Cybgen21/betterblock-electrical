@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5e6a8"/>
+      <stop offset="35%" stop-color="#d4af37"/>
+      <stop offset="70%" stop-color="#b8941f"/>
+      <stop offset="100%" stop-color="#f0d875"/>
+    </linearGradient>
+  </defs>
+  <!-- Building block outline -->
+  <path d="M60 8 L95 28 L95 95 L60 115 L25 95 L25 28 Z" stroke="url(#gold)" stroke-width="2.5" fill="none"/>
+  <path d="M25 55 L60 75 L95 55" stroke="url(#gold)" stroke-width="2" fill="none"/>
+  <path d="M60 75 L60 115" stroke="url(#gold)" stroke-width="2" fill="none"/>
+  <!-- Arch -->
+  <path d="M38 55 Q60 38 82 55" stroke="url(#gold)" stroke-width="2" fill="none"/>
+  <!-- Lightning bolt -->
+  <path d="M62 22 L52 58 L58 58 L48 98 L72 52 L64 52 L74 22 Z" fill="url(#gold)"/>
+</svg>

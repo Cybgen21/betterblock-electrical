@@ -1,0 +1,16 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+.vscode/
+.idea/
+
+# Local / private
+.env
+.env.*
+*.log
+
+# Optional local tooling
+node_modules/
+.cache/

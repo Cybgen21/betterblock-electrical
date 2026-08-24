@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Betterblock Electrical LTD — premium electrical services across Staffordshire. Domestic, commercial, rewires, EICRs and more. Enquire for a quote.">
+  <title>Betterblock Electrical | Staffordshire Electricians</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/logo-icon.png" type="image/png">
+</head>
+<body class="is-loading">
+  <div class="site-loader" aria-hidden="true">
+    <div class="loader-grid" aria-hidden="true"></div>
+    <div class="loader-glow" aria-hidden="true"></div>
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <div class="loader-ring"></div>
+        <div class="loader-ring loader-ring--2"></div>
+        <img class="loader-logo" src="assets/logo-icon.png" alt="" width="72" height="72">
+      </div>
+      <div class="loader-brand">
+        <span class="loader-name">Betterblock</span>
+        <span class="loader-sub">Electrical LTD</span>
+      </div>
+      <div class="loader-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <span class="loader-bar-fill"></span>
+      </div>
+      <span class="loader-status">Powering up</span>
+    </div>
+    <div class="loader-flash" aria-hidden="true"></div>
+  </div>
+
+  <div class="power-flash" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span class="scroll-progress-bar"></span></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <div class="ambient-light ambient-hero" aria-hidden="true"></div>
+  <div class="ambient-light ambient-mid" aria-hidden="true"></div>
+
+  <canvas id="electric-canvas" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <span class="menu-toggle-box">
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+      </span>
+    </button>
+
+    <div class="header-center">
+      <a href="/" class="logo-link" aria-label="Betterblock Electrical home">
+        <img src="assets/logo-icon.png" alt="" class="logo-mark" width="40" height="40">
+        <span class="logo-text">
+          <span class="logo-name">Betterblock</span>
+          <span class="logo-sub">Electrical LTD</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#areas">Areas</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="links/" class="header-card">Digital Card</a>
+        <a href="mailto:Betterblockelectrical@gmail.com" class="header-email" title="Email us">Email</a>
+        <a href="tel:07394433162" class="header-cta">
+          <span class="cta-dot"></span>
+          07394 433162
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+    <div class="mobile-menu-panel">
+      <div class="mobile-menu-top">
+        <div class="mobile-menu-brand">
+          <img src="assets/logo-icon.png" alt="" width="36" height="36">
+          <span class="mobile-menu-label">Navigation</span>
+        </div>
+        <button type="button" class="mobile-menu-close" aria-label="Close menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+      <nav aria-label="Mobile">
+        <a href="#services"><span class="nav-index">01</span><span class="nav-text">Services</span></a>
+        <a href="#process"><span class="nav-index">02</span><span class="nav-text">Process</span></a>
+        <a href="#areas"><span class="nav-index">03</span><span class="nav-text">Areas</span></a>
+        <a href="#about"><span class="nav-index">04</span><span class="nav-text">About</span></a>
+        <a href="#contact"><span class="nav-index">05</span><span class="nav-text">Contact</span></a>
+      </nav>
+      <div class="mobile-menu-actions">
+        <a href="tel:07394433162" class="mobile-menu-call">
+          <span class="call-dot"></span>
+          07394 433162
+        </a>
+        <a href="mailto:Betterblockelectrical@gmail.com" class="mobile-menu-email">Email Us</a>
+        <a href="links/" class="mobile-menu-card">Digital Card</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-pulse"></span>
+          Serving Staffordshire &amp; surrounding areas
+        </div>
+
+        <h1 class="hero-title">
+          <span class="line"><span class="word">Power</span></span>
+          <span class="line"><span class="word">done</span> <em class="word accent scramble" data-scramble="properly.">properly.</em></span>
+        </h1>
+
+        <p class="hero-lead">
+          From rewires to EICRs, domestic to commercial — Betterblock Electrical delivers
+          quality workmanship you can trust. No online prices. Every job starts with a conversation.
+        </p>
+
+        <div class="hero-actions">
+          <a href="tel:07394433162" class="btn btn-primary magnetic">
+            <span>Call 07394 433162</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="mailto:Betterblockelectrical@gmail.com" class="btn btn-ghost">Email Us</a>
+          <a href="links/" class="btn btn-card">Digital Card</a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="trust-item">
+            <span class="trust-num" data-count="6">0</span>
+            <span class="trust-label">Core services</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <span class="trust-num">100%</span>
+            <span class="trust-label">Enquiry-based quotes</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <span class="trust-num">Local</span>
+            <span class="trust-label">Staffordshire based</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-ring ring-1"></div>
+        <div class="visual-ring ring-2"></div>
+        <div class="visual-ring ring-3"></div>
+        <div class="logo-hero tilt-target">
+          <img src="assets/logo-full.png" alt="Betterblock Electrical logo" width="280" height="auto">
+          <div class="logo-shimmer"></div>
+        </div>
+        <div class="voltage-meter" aria-hidden="true">
+          <svg viewBox="0 0 120 70" class="meter-svg">
+            <path class="meter-arc-bg" d="M15 60 A45 45 0 0 1 105 60" fill="none" stroke-width="4"/>
+            <path class="meter-arc" d="M15 60 A45 45 0 0 1 105 60" fill="none" stroke-width="4"/>
+            <line class="meter-needle" x1="60" y1="60" x2="60" y2="22" stroke-width="2"/>
+            <circle cx="60" cy="60" r="4" fill="currentColor"/>
+          </svg>
+          <span class="meter-label">Live</span>
+        </div>
+        <div class="floating-card card-1">
+          <span class="fc-icon">⚡</span>
+          <span>Consumer unit upgrades</span>
+        </div>
+        <div class="floating-card card-2">
+          <span class="fc-icon">🏠</span>
+          <span>Domestic rewires</span>
+        </div>
+        <div class="floating-card card-3">
+          <span class="fc-icon">📋</span>
+          <span>EICR certificates</span>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <section class="marquee-section" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Betterblock Electrical</span><span class="dot">◆</span>
+        <span>Domestic &amp; Commercial</span><span class="dot">◆</span>
+        <span>Quality Work</span><span class="dot">◆</span>
+        <span>Reliable Service</span><span class="dot">◆</span>
+        <span>Trusted Results</span><span class="dot">◆</span>
+        <span>Staffordshire Electricians</span><span class="dot">◆</span>
+        <span>Betterblock Electrical</span><span class="dot">◆</span>
+      </div>
+    </section>
+
+    <!-- SERVICES PREVIEW -->
+    <section class="services" id="services">
+      <div class="section-header">
+        <span class="section-tag">What we do</span>
+        <h2 class="section-title">Every connection,<br><em>handled with care.</em></h2>
+        <p class="section-desc">Full-scope electrical work across Staffordshire — no job too small, no project too complex. All pricing on enquiry.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card tilt-card" data-service="domestic">
+          <div class="card-glow"></div>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8 22h14l-4-10 18 16H24l4 10L8 22z" stroke="currentColor" stroke-width="1.5"/><path d="M6 38h36" stroke="currentColor" stroke-width="1.5"/><path d="M14 38V28M24 38V24M34 38V30" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Domestic Electrical</h3>
+          <p>Home installations, repairs, lighting design and full property rewires.</p>
+          <span class="card-link">Enquire →</span>
+        </article>
+
+        <article class="service-card tilt-card" data-service="commercial">
+          <div class="card-glow"></div>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="10" y="14" width="10" height="24" stroke="currentColor" stroke-width="1.5"/><rect x="22" y="8" width="10" height="30" stroke="currentColor" stroke-width="1.5"/><rect x="34" y="18" width="6" height="20" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Commercial Electrical</h3>
+          <p>Office fit-outs, retail spaces, maintenance contracts and compliance.</p>
+          <span class="card-link">Enquire →</span>
+        </article>
+
+        <article class="service-card tilt-card" data-service="cctv">
+          <div class="card-glow"></div>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M6 20h28l8 6v12H6V20z" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="29" r="5" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>CCTV &amp; Security</h3>
+          <p>Professional security systems to protect your home or business.</p>
+          <span class="card-link">Enquire →</span>
+        </article>
+
+        <article class="service-card tilt-card" data-service="rewires">
+          <div class="card-glow"></div>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M26 6L16 26h8l-4 16 20-28h-10l4-8z" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Rewires</h3>
+          <p>Complete or partial rewires with minimal disruption to your property.</p>
+          <span class="card-link">Enquire →</span>
+        </article>
+
+        <article class="service-card tilt-card" data-service="consumer">
+          <div class="card-glow"></div>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="8" y="10" width="32" height="28" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M16 18v4M24 18v4M32 18v4M16 28h16" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Consumer Unit Upgrades</h3>
+          <p>Modern fuse boards with RCD protection for safety and compliance.</p>
+          <span class="card-link">Enquire →</span>
+        </article>
+
+        <article class="service-card tilt-card" data-service="eicr">
+          <div class="card-glow"></div>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="10" y="6" width="28" height="36" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M16 16h16M16 24h12M16 32h8" stroke="currentColor" stroke-width="1.5"/><circle cx="34" cy="34" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>EICRs &amp; Landlord Certificates</h3>
+          <p>Electrical safety reports for landlords, agents and property sales.</p>
+          <span class="card-link">Enquire →</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process section-lit" id="process">
+      <div class="section-glow" aria-hidden="true"></div>
+      <div class="process-inner">
+        <div class="section-header section-header--center">
+          <span class="section-tag">How it works</span>
+          <h2 class="section-title">Simple from<br><em>first call to finish.</em></h2>
+          <p class="section-desc">No online checkout, no hidden fees on the website — just a straightforward process built around your project.</p>
+        </div>
+
+        <div class="process-steps-wrap">
+          <svg class="circuit-line" viewBox="0 0 800 20" preserveAspectRatio="none" aria-hidden="true">
+            <path class="circuit-path" d="M0 10 H800" fill="none" stroke="#d4af37" stroke-width="2"/>
+          </svg>
+          <div class="process-steps">
+            <article class="process-step">
+              <div class="step-icon" aria-hidden="true">
+                <img src="assets/icon-step-contact.svg" alt="" width="32" height="32">
+              </div>
+              <span class="step-num">01</span>
+              <h3>Get in touch</h3>
+              <p>Call or email us. Tell us what you need and we'll respond promptly.</p>
+            </article>
+            <div class="step-connector" aria-hidden="true"></div>
+            <article class="process-step">
+              <div class="step-icon" aria-hidden="true">
+                <img src="assets/icon-step-quote.svg" alt="" width="32" height="32">
+              </div>
+              <span class="step-num">02</span>
+              <h3>Survey &amp; quote</h3>
+              <p>We assess the job properly and provide a clear, honest quote — no surprises.</p>
+            </article>
+            <div class="step-connector" aria-hidden="true"></div>
+            <article class="process-step">
+              <div class="step-icon" aria-hidden="true">
+                <img src="assets/icon-step-done.svg" alt="" width="32" height="32">
+              </div>
+              <span class="step-num">03</span>
+              <h3>Job done right</h3>
+              <p>Quality workmanship, tidy finish, and certification where required. Trusted results.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AREAS -->
+    <section class="areas" id="areas">
+      <div class="areas-inner">
+        <div class="section-header">
+          <span class="section-tag">Coverage</span>
+          <h2 class="section-title">Serving<br><em>Staffordshire.</em></h2>
+          <p class="section-desc">Based locally and covering towns and villages across the county and surrounding areas.</p>
+        </div>
+        <div class="areas-visual" aria-hidden="true">
+          <img class="areas-map" src="assets/coverage-map.svg" alt="" width="240" height="240">
+          <span class="areas-map-label">Staffordshire</span>
+        </div>
+        <div class="areas-grid">
+          <span>Stafford</span>
+          <span>Stoke-on-Trent</span>
+          <span>Newcastle-under-Lyme</span>
+          <span>Cannock</span>
+          <span>Lichfield</span>
+          <span>Burton upon Trent</span>
+          <span>Stone</span>
+          <span>Tamworth</span>
+          <span>Leek</span>
+          <span>Uttoxeter</span>
+          <span>Rugeley</span>
+          <span>Surrounding areas</span>
+        </div>
+        <p class="areas-note">Not sure if we cover you? <a href="#contact">Get in touch</a> — we'll let you know.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq section-lit" id="faq">
+      <div class="section-glow section-glow--right" aria-hidden="true"></div>
+      <div class="faq-inner">
+        <div class="section-header">
+          <span class="section-tag">FAQ</span>
+          <h2 class="section-title">Common<br><em>questions.</em></h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Do you show prices on the website?</summary>
+            <p>No — every electrical job is different. We provide quotes on enquiry after understanding your specific requirements.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What areas do you cover?</summary>
+            <p>We cover Staffordshire and surrounding areas including Stafford, Stoke, Cannock, Lichfield, Burton and more.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you do both domestic and commercial work?</summary>
+            <p>Yes — from home rewires and consumer unit upgrades to commercial fit-outs, CCTV and landlord certificates.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can you provide EICR certificates for landlords?</summary>
+            <p>Absolutely. We carry out Electrical Installation Condition Reports and provide the certification you need for compliance.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT STRIP -->
+    <section class="about-strip" id="about">
+      <div class="about-inner">
+        <div class="about-text">
+          <span class="section-tag">The electrician</span>
+          <h2 class="section-title">Rehan Rehman</h2>
+          <p class="about-bio">
+            Betterblock Electrical LTD is built on one promise: do the job right, communicate clearly,
+            and leave every property safer than you found it. Based in Staffordshire, serving homeowners,
+            landlords and businesses who expect more from their electrician.
+          </p>
+          <ul class="about-values">
+            <li>Quality Work</li>
+            <li>Reliable Service</li>
+            <li>Trusted Results</li>
+          </ul>
+        </div>
+        <div class="about-visual">
+          <div class="about-frame">
+            <img src="assets/business-card.jpg" alt="Betterblock Electrical business card" loading="lazy">
+            <div class="frame-corner tl"></div>
+            <div class="frame-corner tr"></div>
+            <div class="frame-corner bl"></div>
+            <div class="frame-corner br"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKSHOP SCENE -->
+    <section class="workshop" id="workshop" aria-label="Betterblock — we fix the messy jobs">
+      <div class="workshop-inner">
+        <span class="section-tag workshop-tag">The job</span>
+        <h2 class="workshop-title">When the wiring’s a mess,<br><em>we sort it.</em></h2>
+
+        <div class="workshop-stage">
+          <!-- Tangled wires SVG -->
+          <svg class="workshop-wires" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="wireGold" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#9a7b1a"/>
+                <stop offset="50%" stop-color="#f0d875"/>
+                <stop offset="100%" stop-color="#d4af37"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Left junction box -->
+            <rect class="ws-box" x="40" y="160" width="70" height="90" rx="6" fill="none" stroke="#d4af37" stroke-width="2"/>
+            <line x1="55" y1="180" x2="95" y2="180" stroke="#d4af37" stroke-width="1.5" opacity="0.5"/>
+            <line x1="55" y1="205" x2="95" y2="205" stroke="#d4af37" stroke-width="1.5" opacity="0.5"/>
+            <line x1="55" y1="230" x2="95" y2="230" stroke="#d4af37" stroke-width="1.5" opacity="0.5"/>
+
+            <!-- Right consumer unit -->
+            <rect class="ws-box" x="790" y="150" width="70" height="110" rx="6" fill="none" stroke="#d4af37" stroke-width="2"/>
+            <rect x="802" y="165" width="46" height="10" rx="2" fill="#d4af37" opacity="0.35"/>
+            <rect x="802" y="185" width="46" height="10" rx="2" fill="#d4af37" opacity="0.35"/>
+            <rect x="802" y="205" width="46" height="10" rx="2" fill="#d4af37" opacity="0.35"/>
+            <rect x="802" y="225" width="46" height="10" rx="2" fill="#d4af37" opacity="0.35"/>
+
+            <!-- Tangled wires -->
+            <path class="wire wire-a" d="M110 180 C200 80, 280 320, 380 200 S520 60, 620 200 S720 300, 790 185" fill="none" stroke="url(#wireGold)" stroke-width="3" stroke-linecap="round"/>
+            <path class="wire wire-b" d="M110 205 C220 300, 300 100, 420 240 S560 340, 650 180 S750 100, 790 210" fill="none" stroke="#c9a227" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
+            <path class="wire wire-c" d="M110 230 C180 260, 260 180, 350 280 S480 120, 580 260 S700 200, 790 235" fill="none" stroke="#8b7355" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <path class="wire wire-d" d="M110 190 C250 40, 340 360, 470 160 S620 40, 790 200" fill="none" stroke="#e8c547" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+
+            <!-- Sparks at tangle points -->
+            <g class="spark-group">
+              <circle class="spark s1" cx="380" cy="200" r="3" fill="#f0d875"/>
+              <circle class="spark s2" cx="470" cy="160" r="2.5" fill="#fff"/>
+              <circle class="spark s3" cx="580" cy="260" r="3" fill="#f0d875"/>
+              <circle class="spark s4" cx="420" cy="240" r="2" fill="#fff"/>
+            </g>
+
+            <!-- Current pulse dots along wires -->
+            <circle class="pulse-dot pd1" r="4" fill="#f0d875">
+              <animateMotion dur="3.5s" repeatCount="indefinite" path="M110 180 C200 80, 280 320, 380 200 S520 60, 620 200 S720 300, 790 185"/>
+            </circle>
+            <circle class="pulse-dot pd2" r="3" fill="#d4af37">
+              <animateMotion dur="4.2s" begin="0.8s" repeatCount="indefinite" path="M110 205 C220 300, 300 100, 420 240 S560 340, 650 180 S750 100, 790 210"/>
+            </circle>
+          </svg>
+
+          <!-- Floating tools -->
+          <div class="tool tool-screwdriver" aria-hidden="true">
+            <svg viewBox="0 0 80 24" fill="none"><rect x="0" y="8" width="28" height="8" rx="2" fill="#d4af37"/><rect x="28" y="10" width="40" height="4" fill="#c0c0c0"/><path d="M68 8 L80 12 L68 16 Z" fill="#a8a8a8"/></svg>
+            <span>Screwdriver</span>
+          </div>
+          <div class="tool tool-pliers" aria-hidden="true">
+            <svg viewBox="0 0 64 48" fill="none"><path d="M8 40 L28 22 L36 28 L16 46 Z" stroke="#d4af37" stroke-width="2.5" fill="none"/><path d="M56 8 L36 28 L28 22 L48 2 Z" stroke="#d4af37" stroke-width="2.5" fill="none"/><circle cx="32" cy="25" r="3" fill="#d4af37"/></svg>
+            <span>Pliers</span>
+          </div>
+          <div class="tool tool-meter" aria-hidden="true">
+            <svg viewBox="0 0 48 56" fill="none"><rect x="4" y="4" width="40" height="48" rx="4" stroke="#d4af37" stroke-width="2"/><rect x="10" y="12" width="28" height="16" rx="2" fill="rgba(212,175,55,0.2)" stroke="#d4af37" stroke-width="1"/><path d="M14 20 L24 16 L34 22" stroke="#f0d875" stroke-width="1.5" fill="none"/><circle cx="16" cy="40" r="3" stroke="#d4af37" stroke-width="1.5"/><circle cx="32" cy="40" r="3" stroke="#d4af37" stroke-width="1.5"/></svg>
+            <span>Multimeter</span>
+          </div>
+          <div class="tool tool-tape" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="16" stroke="#d4af37" stroke-width="2"/><circle cx="20" cy="20" r="7" stroke="#d4af37" stroke-width="1.5"/><path d="M20 4 A16 16 0 0 1 36 20" stroke="#f0d875" stroke-width="3" fill="none"/></svg>
+            <span>Tape</span>
+          </div>
+        </div>
+
+        <p class="workshop-caption">Tangled circuits · Faulty boards · Jobs that need a pro</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="contact-bg-text" aria-hidden="true">CONTACT</div>
+      <div class="contact-inner contact-inner--centered">
+        <div class="contact-copy">
+          <span class="section-tag">Get in touch</span>
+          <h2 class="section-title">Let's talk about<br><em>your project.</em></h2>
+          <p>No online pricing — every job is different. Call or email and we'll come back with honest advice and a clear quote.</p>
+
+          <div class="contact-methods contact-methods--prominent">
+            <a href="tel:07394433162" class="contact-method">
+              <span class="cm-label">Phone</span>
+              <span class="cm-value">07394 433162</span>
+            </a>
+            <a href="mailto:Betterblockelectrical@gmail.com" class="contact-method">
+              <span class="cm-label">Email</span>
+              <span class="cm-value">Betterblockelectrical@gmail.com</span>
+            </a>
+          </div>
+
+          <div class="contact-extras">
+            <div class="contact-extra">
+              <span class="contact-extra-icon" aria-hidden="true">⚡</span>
+              <div>
+                <strong>Fast response</strong>
+                <span>We aim to reply within 24 hours</span>
+              </div>
+            </div>
+            <div class="contact-extra">
+              <span class="contact-extra-icon" aria-hidden="true">📍</span>
+              <div>
+                <strong>Staffordshire based</strong>
+                <span>Local coverage across the county</span>
+              </div>
+            </div>
+            <div class="contact-extra">
+              <span class="contact-extra-icon" aria-hidden="true">✓</span>
+              <div>
+                <strong>No online checkout</strong>
+                <span>Honest quotes after we understand the job</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="links/" class="contact-card-link">View Digital Business Card →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo-icon.png" alt="" width="40" height="40">
+        <div>
+          <strong>Betterblock Electrical LTD</strong>
+          <span>Staffordshire, United Kingdom</span>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="tel:07394433162">07394 433162</a>
+        <a href="mailto:Betterblockelectrical@gmail.com">Email us</a>
+        <a href="links/">Digital Card</a>
+      </div>
+      <p class="footer-legal">&copy; 2026 Betterblock Electrical LTD. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <aside class="mobile-cta-bar" aria-label="Quick contact">
+    <a href="tel:07394433162" class="mobile-cta-call">Call</a>
+    <a href="#contact" class="mobile-cta-enquire">Contact</a>
+  </aside>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
