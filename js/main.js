@@ -7,6 +7,7 @@
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isMobile = window.innerWidth < 768;
+  const isNarrowViewport = window.matchMedia('(max-width: 899px)').matches;
 
   /* ── Lenis (desktop only) ── */
   let lenis;
@@ -32,43 +33,28 @@
     let running = true;
     let rafId = 0;
 
-    let lastWidth = window.innerWidth;
-    let lastHeight = window.innerHeight;
+    let viewW = window.innerWidth;
+    let viewH = window.innerHeight;
+    if (isNarrowViewport) {
+      viewH = Math.max(window.innerHeight, document.documentElement.clientHeight || 0);
+    }
+    let lastWidth = viewW;
 
     function resize() {
+      const w = isNarrowViewport ? viewW : window.innerWidth;
+      const h = isNarrowViewport ? viewH : window.innerHeight;
       const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      canvas.style.width = window.innerWidth + 'px';
-      canvas.style.height = window.innerHeight + 'px';
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-
-    function syncParticlesToViewport() {
-      const w = window.innerWidth;
-      const h = window.innerHeight;
-      if (!particles.length || !lastWidth || !lastHeight) {
-        lastWidth = w;
-        lastHeight = h;
-        return;
-      }
-
-      const scaleX = w / lastWidth;
-      const scaleY = h / lastHeight;
-      if (Math.abs(scaleX - 1) > 0.02 || Math.abs(scaleY - 1) > 0.02) {
-        for (let i = 0; i < particles.length; i++) {
-          particles[i].x *= scaleX;
-          particles[i].y *= scaleY;
-        }
-      }
-      lastWidth = w;
-      lastHeight = h;
     }
 
     function initParticles() {
       particles = Array.from({ length: count }, () => ({
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
+        x: Math.random() * viewW,
+        y: Math.random() * viewH,
         vx: (Math.random() - 0.5) * 0.22,
         vy: (Math.random() - 0.5) * 0.22,
         scale: Math.random() * 0.55 + 1.1,
@@ -132,16 +118,16 @@
 
     function frame() {
       if (!running) return;
-      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      ctx.clearRect(0, 0, viewW, viewH);
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
         p.x += p.vx;
         p.y += p.vy;
         p.twinkle += p.twinkleSpeed;
-        if (p.x < -20) p.x = window.innerWidth + 20;
-        if (p.x > window.innerWidth + 20) p.x = -20;
-        if (p.y < -20) p.y = window.innerHeight + 20;
-        if (p.y > window.innerHeight + 20) p.y = -20;
+        if (p.x < -20) p.x = viewW + 20;
+        if (p.x > viewW + 20) p.x = -20;
+        if (p.y < -20) p.y = viewH + 20;
+        if (p.y > viewH + 20) p.y = -20;
 
         const glow = p.a * (0.65 + 0.35 * Math.sin(p.twinkle));
         drawBulb(p.x, p.y, p.scale, glow);
@@ -153,14 +139,26 @@
     initParticles();
     frame();
 
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        syncParticlesToViewport();
-        resize();
-      }, 300);
-    });
+    if (!isNarrowViewport) {
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          const w = window.innerWidth;
+          const h = window.innerHeight;
+          if (particles.length && lastWidth && Math.abs(w - lastWidth) > 40) {
+            const scaleX = w / lastWidth;
+            for (let i = 0; i < particles.length; i++) {
+              particles[i].x *= scaleX;
+            }
+          }
+          viewW = w;
+          viewH = h;
+          lastWidth = w;
+          resize();
+        }, 300);
+      });
+    }
 
     document.addEventListener('visibilitychange', () => {
       running = !document.hidden;
