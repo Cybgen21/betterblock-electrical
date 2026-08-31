@@ -33,6 +33,16 @@
       </div>
       <span class="loader-status">Powering up</span>
     </div>
+    <svg class="loader-lightning" viewBox="0 0 100 200" aria-hidden="true">
+      <defs>
+        <linearGradient id="boltGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#fff"/>
+          <stop offset="40%" stop-color="#f0d875"/>
+          <stop offset="100%" stop-color="#d4af37"/>
+        </linearGradient>
+      </defs>
+      <path d="M55 0 L35 85 L52 85 L40 200 L75 70 L56 70 Z" fill="url(#boltGrad)"/>
+    </svg>
     <div class="loader-flash" aria-hidden="true"></div>
   </div>
 
@@ -57,7 +67,7 @@
 
     <div class="header-center">
       <a href="index.html" class="logo-link" aria-label="Betterblock Electrical home">
-        <img src="assets/logo-icon.png" alt="" class="logo-mark" width="40" height="40">
+        <img src="assets/logo-icon.png" alt="" class="logo-mark" width="60" height="60">
         <span class="logo-text">
           <span class="logo-name">Betterblock</span>
           <span class="logo-sub">Electrical LTD</span>
@@ -88,7 +98,7 @@
     <div class="mobile-menu-panel">
       <div class="mobile-menu-top">
         <div class="mobile-menu-brand">
-          <img src="assets/logo-icon.png" alt="" width="36" height="36">
+          <img src="assets/logo-icon.png" alt="" width="48" height="48">
           <span class="mobile-menu-label">Navigation</span>
         </div>
         <button type="button" class="mobile-menu-close" aria-label="Close menu">
@@ -148,16 +158,6 @@
 
         <div class="hero-trust">
           <div class="trust-item">
-            <span class="trust-num" data-count="6">0</span>
-            <span class="trust-label">Core services</span>
-          </div>
-          <div class="trust-divider"></div>
-          <div class="trust-item">
-            <span class="trust-num">100%</span>
-            <span class="trust-label">Enquiry-based quotes</span>
-          </div>
-          <div class="trust-divider"></div>
-          <div class="trust-item">
             <span class="trust-num">Local</span>
             <span class="trust-label">Staffordshire based</span>
           </div>
@@ -170,7 +170,13 @@
         <div class="visual-ring ring-3"></div>
         <div class="logo-hero tilt-target">
           <img src="assets/logo-full.png" alt="Betterblock Electrical logo" width="280" height="auto">
-          <div class="logo-shimmer"></div>
+          <div class="hero-orbit-tool" aria-hidden="true">
+            <svg class="orbit-screwdriver" viewBox="0 0 80 24" fill="none">
+              <rect x="0" y="8" width="28" height="8" rx="2" fill="#d4af37"/>
+              <rect x="28" y="10" width="40" height="4" fill="#c0c0c0"/>
+              <path d="M68 8 L80 12 L68 16 Z" fill="#a8a8a8"/>
+            </svg>
+          </div>
         </div>
         <div class="voltage-meter" aria-hidden="true">
           <svg viewBox="0 0 120 70" class="meter-svg">
@@ -181,23 +187,6 @@
           </svg>
           <span class="meter-label">Live</span>
         </div>
-        <div class="floating-card card-1">
-          <span class="fc-icon">⚡</span>
-          <span>Consumer unit upgrades</span>
-        </div>
-        <div class="floating-card card-2">
-          <span class="fc-icon">🏠</span>
-          <span>Domestic rewires</span>
-        </div>
-        <div class="floating-card card-3">
-          <span class="fc-icon">📋</span>
-          <span>EICR certificates</span>
-        </div>
-      </div>
-
-      <div class="scroll-hint" aria-hidden="true">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
       </div>
     </section>
 
@@ -215,7 +204,8 @@
     </section>
 
     <!-- SERVICES PREVIEW -->
-    <section class="services" id="services">
+    <section class="services section-light" id="services">
+      <div class="services-inner">
       <div class="section-header">
         <span class="section-tag">What we do</span>
         <h2 class="section-title">Every connection,<br><em>handled with care.</em></h2>
@@ -283,6 +273,7 @@
           <span class="card-link">Enquire →</span>
         </article>
       </div>
+      </div>
     </section>
 
     <!-- PROCESS -->
@@ -332,7 +323,7 @@
     </section>
 
     <!-- AREAS -->
-    <section class="areas" id="areas">
+    <section class="areas section-light" id="areas">
       <div class="areas-inner">
         <div class="section-header">
           <span class="section-tag">Coverage</span>
@@ -391,7 +382,7 @@
     </section>
 
     <!-- ABOUT STRIP -->
-    <section class="about-strip" id="about">
+    <section class="about-strip section-light" id="about">
       <div class="about-inner">
         <div class="about-text">
           <span class="section-tag">The electrician</span>
@@ -406,15 +397,6 @@
             <li>Reliable Service</li>
             <li>Trusted Results</li>
           </ul>
-        </div>
-        <div class="about-visual">
-          <div class="about-frame">
-            <img src="assets/business-card.jpg" alt="Betterblock Electrical business card" loading="lazy">
-            <div class="frame-corner tl"></div>
-            <div class="frame-corner tr"></div>
-            <div class="frame-corner bl"></div>
-            <div class="frame-corner br"></div>
-          </div>
         </div>
       </div>
     </section>
@@ -496,8 +478,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section class="contact" id="contact">
-      <div class="contact-bg-text" aria-hidden="true">CONTACT</div>
+    <section class="contact section-light" id="contact">
       <div class="contact-inner contact-inner--centered">
         <div class="contact-copy">
           <span class="section-tag">Get in touch</span>

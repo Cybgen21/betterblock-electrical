@@ -27,7 +27,7 @@
   const canvas = document.getElementById('electric-canvas');
   if (canvas && !prefersReducedMotion) {
     const ctx = canvas.getContext('2d', { alpha: true });
-    const count = isMobile ? 20 : 38;
+    const count = isMobile ? 14 : 24;
     let particles = [];
     let running = true;
     let rafId = 0;
@@ -45,13 +45,65 @@
       particles = Array.from({ length: count }, () => ({
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        r: Math.random() * 1.8 + 0.7,
-        a: Math.random() * 0.35 + 0.28,
+        vx: (Math.random() - 0.5) * 0.22,
+        vy: (Math.random() - 0.5) * 0.22,
+        scale: Math.random() * 0.55 + 1.1,
+        a: Math.random() * 0.3 + 0.5,
         twinkle: Math.random() * Math.PI * 2,
-        twinkleSpeed: 0.012 + Math.random() * 0.016,
+        twinkleSpeed: 0.012 + Math.random() * 0.02,
       }));
+    }
+
+    function drawBulb(x, y, scale, glow) {
+      const s = scale;
+      ctx.save();
+      ctx.translate(x, y);
+
+      ctx.beginPath();
+      ctx.ellipse(0, -2 * s, 11 * s, 13 * s, 0, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 210, 80, ${glow * 0.18})`;
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(-5.5 * s, 3 * s);
+      ctx.bezierCurveTo(-5.5 * s, -9 * s, 5.5 * s, -9 * s, 5.5 * s, 3 * s);
+      ctx.lineTo(4.2 * s, 5.5 * s);
+      ctx.lineTo(-4.2 * s, 5.5 * s);
+      ctx.closePath();
+      ctx.fillStyle = `rgba(255, 248, 220, ${glow * 0.9})`;
+      ctx.fill();
+      ctx.strokeStyle = `rgba(180, 140, 50, ${glow * 0.75})`;
+      ctx.lineWidth = 0.9 * s;
+      ctx.stroke();
+
+      ctx.fillStyle = `rgba(130, 135, 145, ${glow * 0.95})`;
+      for (let i = 0; i < 4; i++) {
+        ctx.fillRect(-3.8 * s, (6.5 + i * 2.1) * s, 7.6 * s, 1.4 * s);
+      }
+      ctx.fillRect(-3 * s, 14.8 * s, 6 * s, 2.2 * s);
+
+      ctx.strokeStyle = `rgba(255, 190, 40, ${glow})`;
+      ctx.lineWidth = 0.85 * s;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(-2.2 * s, 0);
+      ctx.lineTo(0, -5.5 * s);
+      ctx.lineTo(2.2 * s, 0);
+      ctx.stroke();
+
+      if (glow > 0.45) {
+        ctx.strokeStyle = `rgba(255, 230, 140, ${(glow - 0.45) * 0.35})`;
+        ctx.lineWidth = 0.6 * s;
+        for (let a = 0; a < 6; a++) {
+          const angle = (a / 6) * Math.PI * 2 - Math.PI / 2;
+          ctx.beginPath();
+          ctx.moveTo(Math.cos(angle) * 7 * s, -2 * s + Math.sin(angle) * 7 * s);
+          ctx.lineTo(Math.cos(angle) * 10.5 * s, -2 * s + Math.sin(angle) * 10.5 * s);
+          ctx.stroke();
+        }
+      }
+
+      ctx.restore();
     }
 
     function frame() {
@@ -62,21 +114,13 @@
         p.x += p.vx;
         p.y += p.vy;
         p.twinkle += p.twinkleSpeed;
-        if (p.x < 0 || p.x > window.innerWidth) p.vx *= -1;
-        if (p.y < 0 || p.y > window.innerHeight) p.vy *= -1;
+        if (p.x < -20) p.x = window.innerWidth + 20;
+        if (p.x > window.innerWidth + 20) p.x = -20;
+        if (p.y < -20) p.y = window.innerHeight + 20;
+        if (p.y > window.innerHeight + 20) p.y = -20;
 
-        const glow = p.a * (0.7 + 0.3 * Math.sin(p.twinkle));
-        const glowR = p.r * 2.4;
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, glowR, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(212,175,55,${glow * 0.16})`;
-        ctx.fill();
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(240,216,117,${glow})`;
-        ctx.fill();
+        const glow = p.a * (0.65 + 0.35 * Math.sin(p.twinkle));
+        drawBulb(p.x, p.y, p.scale, glow);
       }
       rafId = requestAnimationFrame(frame);
     }
@@ -138,14 +182,9 @@
       .to('.hero-title .word', { y: 0, duration: 0.8, stagger: 0.06 }, '-=0.35')
       .to('.hero-lead', { opacity: 1, duration: 0.6 }, '-=0.4')
       .to('.hero-actions', { opacity: 1, duration: 0.6 }, '-=0.4')
-      .to('.hero-trust', { opacity: 1, duration: 0.6 }, '-=0.3')
-      .to('.scroll-hint', { opacity: 1, duration: 0.5 }, '-=0.2');
+      .to('.hero-trust', { opacity: 1, duration: 0.6 }, '-=0.3');
 
-    if (window.innerWidth >= 1024) {
-      heroTl.from('.floating-card', { opacity: 0, y: 20, duration: 0.6, stagger: 0.1 }, '-=0.5');
-    }
-
-    heroTl.from('.hero-visual', { scale: 0.88, opacity: 0, duration: 0.85 }, '-=0.55');
+    heroTl.from('.hero-visual', { scale: 0.88, opacity: 0, duration: 0.85 }, '-=0.3');
   }
 
   /* ── Workshop ref (used by scroll reveals) ── */
@@ -226,7 +265,6 @@
 
     /* About */
     reveal('.about-text', { trigger: '.about-strip', y: 32, start: 'top 82%' });
-    reveal('.about-frame', { trigger: '.about-strip', y: 32, scale: 0.94, duration: 0.85, start: 'top 82%' });
     reveal('.about-values li', { trigger: '.about-values', y: 14, stagger: 0.07, duration: 0.5, start: 'top 88%' });
 
     /* Workshop */
@@ -279,6 +317,7 @@
     const fill = siteLoader.querySelector('.loader-bar-fill');
     const status = siteLoader.querySelector('.loader-status');
     const flash = siteLoader.querySelector('.loader-flash');
+    const lightning = siteLoader.querySelector('.loader-lightning');
     const content = siteLoader.querySelector('.loader-content');
     const statuses = ['Powering up', 'Checking circuits', 'Going live'];
 
@@ -302,7 +341,10 @@
           if (bar) bar.setAttribute('aria-valuenow', String(Math.round(this.progress() * 100)));
         },
       })
-      .add(() => flash?.classList.add('active'))
+      .add(() => {
+        lightning?.classList.add('strike');
+        flash?.classList.add('active');
+      })
       .to(content, { opacity: 0, scale: 1.06, duration: 0.4, ease: 'power2.in' }, '-=0.15');
   } else {
     if (siteLoader) siteLoader.remove();

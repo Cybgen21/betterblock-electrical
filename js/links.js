@@ -7,9 +7,8 @@
 
   const GOOGLE_REVIEW_URL = ''; // e.g. 'https://g.page/r/xxxxx/review'
   const SOCIAL = {
-    tiktok: '',
-    instagram: '',
     facebook: '',
+    tiktok: '',
   };
 
   const reviewBtn = document.getElementById('google-review');
@@ -25,9 +24,8 @@
   }
 
   const socialMap = [
-    ['TikTok', SOCIAL.tiktok],
-    ['Instagram', SOCIAL.instagram],
     ['Facebook', SOCIAL.facebook],
+    ['TikTok', SOCIAL.tiktok],
   ];
 
   document.querySelectorAll('.social-btn').forEach((btn, i) => {
