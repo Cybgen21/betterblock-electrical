@@ -383,36 +383,6 @@ button {
   max-width: var(--container);
 }
 
-@media (max-width: 899px) {
-  .site-header {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 44px;
-    align-items: center;
-    gap: 0.65rem;
-    padding: 0.65rem 1rem;
-  }
-
-  .menu-toggle {
-    position: relative;
-    right: auto;
-    top: auto;
-    transform: none;
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: end;
-  }
-
-  .header-center {
-    grid-column: 1;
-    grid-row: 1;
-    max-width: none;
-    width: 100%;
-    min-width: 0;
-    align-items: flex-start;
-    gap: 0;
-  }
-}
-
 @media (min-width: 900px) {
   .header-center {
     flex-direction: row;
@@ -458,16 +428,6 @@ button {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold);
-}
-
-@media (max-width: 899px) {
-  .logo-link {
-    gap: 0.5rem;
-  }
-
-  .logo-text {
-    margin-left: -0.35rem;
-  }
 }
 
 .nav-desktop {
@@ -625,6 +585,73 @@ button {
 
 .menu-toggle.active .menu-line:nth-child(3) {
   transform: translateY(-6.5px) rotate(-45deg);
+}
+
+@media (max-width: 899px) {
+  .site-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 44px;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 0.85rem;
+    justify-content: stretch;
+  }
+
+  .menu-toggle {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    flex-shrink: 0;
+  }
+
+  .menu-toggle.active .menu-line:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+
+  .menu-toggle.active .menu-line:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  .header-center {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .logo-link {
+    gap: 0.45rem;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .logo-mark {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    margin-left: -0.35rem;
+    min-width: 0;
+  }
+
+  .logo-name {
+    font-size: 0.86rem;
+    letter-spacing: 0.045em;
+  }
+
+  .logo-sub {
+    font-size: 0.6rem;
+    letter-spacing: 0.09em;
+  }
 }
 
 .mobile-menu {

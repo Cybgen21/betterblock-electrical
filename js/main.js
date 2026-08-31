@@ -32,6 +32,9 @@
     let running = true;
     let rafId = 0;
 
+    let lastWidth = window.innerWidth;
+    let lastHeight = window.innerHeight;
+
     function resize() {
       const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       canvas.width = window.innerWidth * dpr;
@@ -39,6 +42,27 @@
       canvas.style.width = window.innerWidth + 'px';
       canvas.style.height = window.innerHeight + 'px';
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function syncParticlesToViewport() {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      if (!particles.length || !lastWidth || !lastHeight) {
+        lastWidth = w;
+        lastHeight = h;
+        return;
+      }
+
+      const scaleX = w / lastWidth;
+      const scaleY = h / lastHeight;
+      if (Math.abs(scaleX - 1) > 0.02 || Math.abs(scaleY - 1) > 0.02) {
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].x *= scaleX;
+          particles[i].y *= scaleY;
+        }
+      }
+      lastWidth = w;
+      lastHeight = h;
     }
 
     function initParticles() {
@@ -133,9 +157,9 @@
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
+        syncParticlesToViewport();
         resize();
-        initParticles();
-      }, 200);
+      }, 300);
     });
 
     document.addEventListener('visibilitychange', () => {
