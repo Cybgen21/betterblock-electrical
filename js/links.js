@@ -6,11 +6,6 @@
   'use strict';
 
   const GOOGLE_REVIEW_URL = ''; // e.g. 'https://g.page/r/xxxxx/review'
-  const SOCIAL = {
-    facebook: '',
-    tiktok: '',
-  };
-
   const reviewBtn = document.getElementById('google-review');
   if (reviewBtn && GOOGLE_REVIEW_URL) {
     reviewBtn.href = GOOGLE_REVIEW_URL;
@@ -22,24 +17,4 @@
       alert('Google review link coming soon — ask Rehan for the direct link.');
     });
   }
-
-  const socialMap = [
-    ['Facebook', SOCIAL.facebook],
-    ['TikTok', SOCIAL.tiktok],
-  ];
-
-  document.querySelectorAll('.social-btn').forEach((btn, i) => {
-    const url = socialMap[i]?.[1];
-    const name = socialMap[i]?.[0];
-    if (url) {
-      btn.href = url;
-      btn.target = '_blank';
-      btn.rel = 'noopener noreferrer';
-    } else {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        alert(name + ' link coming soon.');
-      });
-    }
-  });
 })();
